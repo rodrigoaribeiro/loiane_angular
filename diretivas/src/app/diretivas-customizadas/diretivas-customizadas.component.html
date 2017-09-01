@@ -1,0 +1,28 @@
+<!--
+<p appFundoAmarelo>
+  texto com fundo amarelo
+</p>
+<p appHighlightMouse>
+   texto com destaque mouseover....
+</p>
+
+<p [appHighlight]="'red'" [defaultColor]="'grey'">
+    texto highlight WTF
+    custom colors
+</p>
+[highlightColor]="'red'" -->
+
+<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+
+<div *ngIf="mostrarCursos">
+    <li *ngFor="let curso of cursos, let i = index">
+        {{curso}} -  indice =  {{i}}
+     </li>
+
+</div>
+
+<div *appNgElse="mostrarCursos">
+  <div>Lista de cursos aqui.</div>
+</div>
+
+

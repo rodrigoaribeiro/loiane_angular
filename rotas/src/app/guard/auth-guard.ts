@@ -6,7 +6,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, CanLo
 import { AuthService } from './../login/auth.service';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanLoad {
 
   constructor(
     private authService: AuthService,
@@ -26,8 +26,6 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    console.log('AuthGuard');
-
     return this.verificarAcesso();
   }
 

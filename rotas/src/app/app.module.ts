@@ -19,19 +19,23 @@ import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso
 */
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guard/auth-guard';
+import { CursosGuard } from './guard/cursos.guard';
+import { AlunosGuard } from './guard/alunos.guard';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
     BrowserModule,FormsModule,
     AppRoutingModule// , CursosModule, AlunosModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard,CursosGuard, AlunosGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,14 +5,23 @@ import { NgModule } from '@angular/core';
 import { AlunosComponent } from './alunos.component';
 import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
+import { AlunosDeactivateGuard } from './../guard/alunos.deactivate.guard';
+import { AlunoDetalheResolver } from './../guard/aluno.detalhe.resolver';
 
 const alunosRoutes = [
   {
-//    path: 'alunos', component: AlunosComponent, children: [
-  path: '', component: AlunosComponent, children: [
-      { path: 'novo', component: AlunoFormComponent },
-      { path: ':id', component: AlunoDetalheComponent },
-      { path: ':id/editar', component: AlunoFormComponent }]
+    //    path: 'alunos', component: AlunosComponent, children: [
+    path: '', component: AlunosComponent, children: [
+      {
+        path: 'novo', component: AlunoFormComponent,
+        canDeactivate: [AlunosDeactivateGuard]
+      },
+      { path: ':id', component: AlunoDetalheComponent,
+    resolve:  {aluno: AlunoDetalheResolver}} ,
+      {
+        path: ':id/editar', component: AlunoFormComponent,
+        canDeactivate: [AlunosDeactivateGuard]
+      }]
   }
 ];
 

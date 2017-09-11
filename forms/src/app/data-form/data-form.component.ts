@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-form.component.css']
 })
 export class DataFormComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

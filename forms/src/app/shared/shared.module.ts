@@ -1,4 +1,4 @@
-import { Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +10,7 @@ import { DropdownService } from './dropdown.service';
 
 @NgModule({
   imports: [
-    CommonModule, Http
+    CommonModule, HttpModule
   ],
   declarations: [FormDebugComponent, CampoControlErroComponent],
   exports: [FormDebugComponent, CampoControlErroComponent],

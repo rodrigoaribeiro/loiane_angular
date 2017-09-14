@@ -15,13 +15,13 @@ import { EstadoBr } from '../shared/models/estado-br';
 })
 export class DataFormComponent implements OnInit {
   formulario: FormGroup;
-  estados : EstadoBr[];
+  estados: EstadoBr[];
   constructor(private formBuilder: FormBuilder,
     private http: Http,
-  private dropdownService: DropdownService) { }
+    private dropdownService: DropdownService) { }
   ngOnInit() {
-     this.dropdownService.getEstadosBr()
-     .subscribe(dados => this.estados =dados);
+    this.dropdownService.getEstadosBr()
+      .subscribe(dados => this.estados = dados);
     /*
     this.formulario = new FormGroup({
       nome: new FormControl('digao'),
@@ -67,8 +67,8 @@ export class DataFormComponent implements OnInit {
       campo => {
         console.log(campo);
         const controle = formGroup.get(campo);
-  controle.markAsTouched();
-         controle.markAsDirty();
+        controle.markAsTouched();
+        controle.markAsDirty();
         if (controle instanceof (FormGroup)) {
           this.verificaValidacoes(controle);
         }
